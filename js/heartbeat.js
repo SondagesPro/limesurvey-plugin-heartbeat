@@ -1,4 +1,4 @@
-﻿var heartBeat = (function(global) {
+﻿var heartBeat = (function(global, $) {
     return {
         beat: function (options) {
             global.setInterval(function() {
@@ -6,4 +6,4 @@
             }, options.interval || 15000);
         }
     };
-})(window);
+})(window, $);
