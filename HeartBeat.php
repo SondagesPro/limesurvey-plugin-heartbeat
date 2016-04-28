@@ -9,10 +9,10 @@ class HeartBeat extends \ls\pluginmanager\PluginBase {
     protected $settings = array(
         'interval'=>array(
             'type'=>'int',
-            'label' => 'Interval of the heartbeat (in ms, min: 5000 ms)',
-            'default' => 10000,
+            'label' => 'Interval of the heartbeat (in seconds, min: 5 m)',
+            'default' => 10,
             'htmlOptions'=>array(
-                'min'=>5000
+                'min'=>5
             )
         )
     );
@@ -32,8 +32,8 @@ class HeartBeat extends \ls\pluginmanager\PluginBase {
         $aOption['endpoint']=$this->api->createUrl('plugins/direct', array('plugin' => get_class($this),'function' => 'beat'));
         // Get the settings
         $interval = (int)$this->get('interval');
-        // Ensure the interval is not < 5000.
-        $aOption['interval']= $interval < 5000 ? 5000 : $interval;
+        // Ensure the interval is not < 5 and convert to ms
+        $aOption['interval']= ($interval < 5 ? 5 : $interval) * 1000;
         // Create the javascript code to inject in the page
         $heartBeatScript="heartBeat.beat(".ls_json_encode($aOption).");";
         // Inject js into the page
