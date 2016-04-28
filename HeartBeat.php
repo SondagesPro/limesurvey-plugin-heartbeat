@@ -9,7 +9,7 @@ class HeartBeat extends \ls\pluginmanager\PluginBase {
     protected $settings = array(
         'interval'=>array(
             'type'=>'int',
-            'label' => 'Interval of the heartbeat (in seconds, min: 5 m)',
+            'label' => 'Interval of the heartbeat (in seconds, min: 5 s)',
             'default' => 10,
             'htmlOptions'=>array(
                 'min'=>5
