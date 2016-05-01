@@ -100,7 +100,7 @@ class HeartBeat extends \ls\pluginmanager\PluginBase {
         $useSessionLifeTime = (boolean)$this->get('useSessionLifeTime', null, null, false);
         
         if($useSessionLifeTime == true){
-            return getDefaultInterval();
+            return $this->getDefaultInterval();
         }else{
             return (int)$this->get('interval', null, null, self::getDefaultInterval());
         }
