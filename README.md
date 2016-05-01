@@ -1,6 +1,14 @@
 # limesurvey-plugin-heartbeat
 A heartbeat plugin for LimeSurvey to ensure the session is kept alive.
 
+## LimeSurvey support
+This plugin was built for LimeSurvey version 2.06 and does only support versions up to 2.06.
+
 ## Installation
-- Go to your LimeSurvey Directory (version up to 2.06 only)
-- Clone in plugins/HeartBeat directory `git https://github.com/frederikprijck/limesurvey-plugin-heartbeat.git HeartBeat`
+- Go to your LimeSurvey plugin Directory
+- Clone in plugins/HeartBeat directory `git clone https://github.com/frederikprijck/limesurvey-plugin-heartbeat.git HeartBeat`
+
+## Plugin Configuration
+- Use 90% of the session lifetime as interval.
+- Use a fixed interval, specified in seconds.
+  - Only used when 90% of session lifetime usage is 'false'.
