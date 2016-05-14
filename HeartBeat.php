@@ -1,5 +1,16 @@
 <?php
-
+/**
+ * HeartBeat Plugin for LimeSurvey
+ * A heartbeat plugin for LimeSurvey to ensure the session is kept alive.
+ *
+ * @author Frederik Prijck <http://www.frederikprijck.net/>
+ * @author Denis Chenu <denis@sondages.pro>
+ * @copyright 2016 Frederik Prijck <http://www.frederikprijck.net/>
+ * @license MIT
+ * @license https://opensource.org/licenses/MIT MIT License (MIT)
+ * @version 1.0.1
+ *
+ */
 class HeartBeat extends \ls\pluginmanager\PluginBase {
 
     static protected $name = 'HeartBeat';
