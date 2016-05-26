@@ -2,7 +2,7 @@
 A heartbeat plugin for LimeSurvey to ensure the session is kept alive.
 
 ## LimeSurvey support
-This plugin was built for LimeSurvey version 2.06 and does only support versions up to 2.06.
+This plugin was built for LimeSurvey version 2.06 and does only support versions up to 2.50.
 
 ## Installation
 - Go to your LimeSurvey plugin Directory
