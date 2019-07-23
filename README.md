@@ -1,3 +1,5 @@
+> This project is **unmaintained**. Please use https://github.com/SondagesPro/limesurvey-plugin-heartbeat instead.
+
 # limesurvey-plugin-heartbeat
 A heartbeat plugin for LimeSurvey to ensure the session is kept alive.
 
