@@ -6,6 +6,7 @@
  * @author Frederik Prijck <http://www.frederikprijck.net/>
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2016-2019 Frederik Prijck <http://www.frederikprijck.net/>
+ * @copyright 2019 Denis Chenu <https://www.sondages.pro/>
  * @license MIT
  * @license https://opensource.org/licenses/MIT MIT License (MIT)
  * @version 1.0.5
