@@ -41,6 +41,9 @@ class HeartBeat extends PluginBase {
 
     public function beforeSurveyPage()
     {
+        if (!$this->getEvent()) {
+            throw new CHttpException(403);
+        }
         // Get the js directory
         $jsPath=Yii::app()->assetManager->publish(dirname(__FILE__) . '/js/');
         // Register the js file
@@ -60,6 +63,9 @@ class HeartBeat extends PluginBase {
 
     public function newDirectRequest()
     {
+        if (!$this->getEvent()) {
+            throw new CHttpException(403);
+        }
         $oEvent = $this->event;
         if ($oEvent->get('target') == "HeartBeat") {
             $this->actionBeat();
@@ -71,6 +77,9 @@ class HeartBeat extends PluginBase {
      */
     public function getPluginSettings($getValues=true)
     {
+        if(!Permission::model()->hasGlobalPermission('settings','read')) {
+            throw new CHttpException(403);
+        }
         /* We fix the default before read the parent: the parent set the current to actual default */
         $this->settings['interval']['default'] = self::getDefaultInterval();
         $this->settings['useSessionLifeTime']['help'] = sprintf($this->_translate("Your actual session.gc_maxlifetime is %s seconds"),App()->session->getTimeout());
@@ -100,6 +109,9 @@ class HeartBeat extends PluginBase {
      */
     public function saveSettings($settings)
     {
+        if(!Permission::model()->hasGlobalPermission('settings','update')) {
+            throw new CHttpException(403);
+        }
         if(empty($settings['useSessionLifeTime']) && empty($settings['interval'])) {
             $settings['useSessionLifeTime'] = 1;
             /* Add a JS warning */
