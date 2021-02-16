@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HeartBeat\n"
+"POT-Creation-Date: 2019-07-21 20:23+0200\n"
+"PO-Revision-Date: 2019-07-21 20:24+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _translate\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: locale\n"
+
+#: HeartBeat.php:75
+#, php-format
+msgid "Your actual session.gc_maxlifetime is %s seconds"
+msgstr "Le paramètre session.gc_maxlifetime actuel est de %s secondes"
+
+#: HeartBeat.php:76
+msgid "Interval of the heartbeat (in seconds, minimum: 5s)"
+msgstr "Interval de pulsation (en secondes, minimum : 5s)"
+
+#: HeartBeat.php:90
+#, php-format
+msgid "This value is not used, current value used : %s seconds."
+msgstr "Cette valeur n‘est pas utilisée, valeur actuelle utilisée : %s secondes."
+
+#: HeartBeat.php:105
+#, php-format
+msgid "HeartBeat setttings fixed to use 90% of the session lifetime as interval"
+msgstr "Les paramètres de HeartBeat ont étais corrigé pour utiliser 90% de la durée de session"
+
+#: HeartBeat.php:110
+msgid "HeartBeat setttings fixed to 5 seconds as interval"
+msgstr "Les paramètres de HeartBeat ont étais corrigé pour utiliser 5 secondes comme intervalle"
