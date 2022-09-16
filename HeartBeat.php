@@ -63,11 +63,7 @@ class HeartBeat extends PluginBase {
 
     public function newDirectRequest()
     {
-        if (!$this->getEvent()) {
-            throw new CHttpException(403);
-        }
-        $oEvent = $this->event;
-        if ($oEvent->get('target') == "HeartBeat") {
+        if ($this->getEvent()->get('target') == "HeartBeat") {
             $this->actionBeat();
         }
     }
