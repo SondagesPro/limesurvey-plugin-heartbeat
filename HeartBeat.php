@@ -6,10 +6,10 @@
  * @author Frederik Prijck <http://www.frederikprijck.net/>
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2016-2019 Frederik Prijck <http://www.frederikprijck.net/>
- * @copyright 2019 Denis Chenu <https://www.sondages.pro/>
+ * @copyright 2019-2022 Denis Chenu <https://www.sondages.pro/>
  * @license MIT
  * @license https://opensource.org/licenses/MIT MIT License (MIT)
- * @version 1.0.5
+ * @version 1.1.1
  *
  */
 class HeartBeat extends PluginBase {
@@ -78,8 +78,9 @@ class HeartBeat extends PluginBase {
         }
         /* We fix the default before read the parent: the parent set the current to actual default */
         $this->settings['interval']['default'] = self::getDefaultInterval();
-        $this->settings['useSessionLifeTime']['help'] = sprintf($this->_translate("Your actual session.gc_maxlifetime is %s seconds"),App()->session->getTimeout());
-        $this->settings['interval']['label'] = $this->_translate("Interval of the heartbeat (in seconds, minimum: 5s)");
+        $this->settings['useSessionLifeTime']['help'] = sprintf($this->translate("Your actual session.gc_maxlifetime is %s seconds"),App()->session->getTimeout());
+        $this->settings['interval']['label'] = $this->translate("Interval of the heartbeat (in seconds, minimum: 5s)");
+        $this->settings['interval']['help'] = $this->translate("Only used if usage of session lifetime is disable");
         $aPluginSettings = parent::getPluginSettings($getValues);
 
         $useSessionLifeTime = (boolean) $this->get('useSessionLifeTime', null, null, false);
@@ -93,7 +94,7 @@ class HeartBeat extends PluginBase {
             }
         }
         if($useSessionLifeTime) {
-            $this->settings['interval']['help'] = sprintf($this->_translate("This value is not used, current value used : %s seconds."),$this->getDefaultInterval());
+            $this->settings['interval']['help'] = sprintf($this->translate("This value is not used, current value used : %s seconds."),$this->getDefaultInterval());
             $this->settings['interval']['htmlOptions']['placeholder'] = $this->getDefaultInterval();
         }
         return $aPluginSettings;
@@ -111,12 +112,12 @@ class HeartBeat extends PluginBase {
         if(empty($settings['useSessionLifeTime']) && empty($settings['interval'])) {
             $settings['useSessionLifeTime'] = 1;
             /* Add a JS warning */
-            App()->setFlashMessage($this->_translate("HeartBeat setttings fixed to use 90% of the session lifetime as interval"),'warning');
+            App()->setFlashMessage($this->translate("HeartBeat setttings fixed to use 90% of the session lifetime as interval"),'warning');
         }
         if(empty($settings['useSessionLifeTime']) && intval($settings['interval']) < 5) {
             $settings['interval'] = 5;
             /* Add a JS warning */
-            App()->setFlashMessage($this->_translate("HeartBeat setttings fixed to 5 seconds as interval"),'warning');
+            App()->setFlashMessage($this->translate("HeartBeat setttings fixed to 5 seconds as interval"),'warning');
         }
         parent::saveSettings($settings);
     }
@@ -162,7 +163,7 @@ class HeartBeat extends PluginBase {
      * @param string $sLanguage use current language if is null
      * @return string
      */
-    private function _translate($sToTranslate, $sEscapeMode = 'unescaped', $sLanguage = null)
+    private function translate($sToTranslate, $sEscapeMode = 'unescaped', $sLanguage = null)
     {
         if(is_callable($this, 'gT')) {
             return $this->gT($sToTranslate,$sEscapeMode,$sLanguage);
