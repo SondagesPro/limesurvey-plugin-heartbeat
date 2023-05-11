@@ -7,7 +7,7 @@ This plugin was built for LimeSurvey version 2.06 and support versions up to 2.6
 ## Installation
 - Go to your LimeSurvey plugin Directory
 - Clone in plugins/HeartBeat directory `git clone https://gitlab.com/SondagesPro/coreAndTools/HeartBeat.git HeartBeat`
-- You can download the zip at <http://extensions.sondages.pro/IMG/auto/HeartBeat.zip>
+- You can download the zip at <https://dl.sondages.pro/HeartBeat.zip>
 
 ## Plugin Configuration
 - Use 90% of the session lifetime as interval.
